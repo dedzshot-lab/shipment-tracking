@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD Police Shipment Tracker</title>
+    <link rel="stylesheet" href="frontcss.css">
+    <script src="frontjava.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <div class="title-block">
+                <img src="deliveryzone.png" alt="Delivery Zone" class="brand-logo">
+                <div>
+                    <span class="eyebrow">AD Police</span>
+                    <h1>Shipment Tracking</h1>
+                    <p id="fileLabel">No CSV files loaded</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <label class="user-field" for="uploaderName">
+                    <span>Your name</span>
+                    <input type="text" id="uploaderName" autocomplete="name" placeholder="Example: Ashraf">
+                </label>
+                <button type="button" id="pickFileBtn" class="primary-btn">Upload CSV</button>
+                <a href="performance.html" class="secondary-btn nav-btn">Performance</a>
+                <button type="button" id="syncServerBtn" class="secondary-btn">Sync Database</button>
+                <button type="button" id="resetViewBtn" class="secondary-btn">Refresh View</button>
+                <input type="file" id="csvInput" accept=".csv,text/csv" multiple>
+            </div>
+        </header>
+
+        <section class="toolbar">
+            <form id="searchForm" class="search-box">
+                <label for="searchBar">Order Search</label>
+                <div class="search-row">
+                    <input type="text" id="searchBar" placeholder="Search name, order number, date, comment, or CSV file">
+                    <button type="submit">Find</button>
+                </div>
+                <p id="orderInputHint" class="input-hint">Order numbers must be 5 to 9 digits.</p>
+                <p id="phoneNumberNotice" class="input-hint phone-notice"></p>
+            </form>
+
+            <div class="view-summary">
+                <span id="activeFilterLabel">Showing all current shipments</span>
+                <span id="fileCountLabel">0 files connected</span>
+                <span id="serverStatusLabel">Checking database</span>
+            </div>
+        </section>
+
+        <section class="overview-grid" aria-label="Shipment summary">
+            <button type="button" class="stat-card" id="allShipmentsBtn">
+                <span>Total Current</span>
+                <strong id="totalShipments">0</strong>
+            </button>
+            <button type="button" class="stat-card success" id="peopleBtn">
+                <span>Names</span>
+                <strong id="totalPeople">0</strong>
+            </button>
+            <button type="button" class="stat-card info" id="filesBtn">
+                <span>CSV Files</span>
+                <strong id="totalFiles">0</strong>
+            </button>
+            <button type="button" class="stat-card warning" id="latestDateBtn">
+                <span>Latest Date</span>
+                <strong id="latestDate">-</strong>
+            </button>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="dashboard-panel primary-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-label">Dashboard</span>
+                        <h2>Shipments by Name</h2>
+                    </div>
+                    <span id="peopleCountLabel" class="panel-count">0 names</span>
+                </div>
+                <div id="personButtons" class="filter-grid"></div>
+            </div>
+
+            <aside class="dashboard-panel database-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-label">Database</span>
+                        <h2>CSV Files</h2>
+                    </div>
+                    <button type="button" id="clearFilesBtn" class="text-btn">Remove Mine</button>
+                </div>
+                <div id="fileList" class="file-list">
+                    <p class="empty-state">No CSV files loaded.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="dashboard-grid compact-dashboard">
+            <div class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-label">Source</span>
+                        <h2>CSV File Breakdown</h2>
+                    </div>
+                    <span id="sourceCountLabel" class="panel-count">0 files</span>
+                </div>
+                <div id="sourceButtons" class="filter-grid"></div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="table-header">
+                <div>
+                    <span class="section-label">Current Interface</span>
+                    <h2 id="tableTitle">All Current Shipments</h2>
+                </div>
+                <span id="rowCountLabel">0 rows</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Order Number</th>
+                            <th>Date Updated</th>
+                            <th>Comment</th>
+                            <th>Folder Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="5" class="placeholder-text">Load one or more CSV files to begin.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

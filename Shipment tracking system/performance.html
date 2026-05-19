@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD Police Performance</title>
+    <link rel="stylesheet" href="frontcss.css">
+    <script src="performance.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <div class="title-block">
+                <img src="deliveryzone.png" alt="Delivery Zone" class="brand-logo">
+                <div>
+                    <span class="eyebrow">AD Police</span>
+                    <h1>Performance</h1>
+                    <p id="performanceLabel">Loading shipment performance</p>
+                </div>
+            </div>
+
+            <div class="header-actions performance-actions">
+                <button type="button" id="dailyBtn" class="secondary-btn">Daily</button>
+                <button type="button" id="weeklyBtn" class="secondary-btn">Weekly</button>
+                <button type="button" id="monthlyBtn" class="secondary-btn">Monthly</button>
+                <a href="fronthtml.html" class="secondary-btn nav-btn">Back to Tracker</a>
+            </div>
+        </header>
+
+        <section class="report-toolbar">
+            <label class="report-field" for="periodFilter">
+                <span id="periodFilterLabel">Report period</span>
+                <select id="periodFilter"></select>
+            </label>
+
+            <div class="report-field people-filter">
+                <div class="people-filter-heading">
+                    <span>People</span>
+                    <div>
+                        <button type="button" id="selectAllPeopleBtn" class="text-btn">All</button>
+                        <button type="button" id="clearPeopleBtn" class="text-btn">Clear</button>
+                    </div>
+                </div>
+                <div id="peopleSelector" class="people-selector"></div>
+            </div>
+
+            <div class="report-mode-buttons">
+                <button type="button" id="separateBtn" class="secondary-btn">Separate Performance</button>
+                <button type="button" id="joinedBtn" class="secondary-btn">Joined Performance</button>
+            </div>
+        </section>
+
+        <section class="overview-grid performance-overview" aria-label="Performance summary">
+            <div class="stat-card">
+                <span>Total Shipments</span>
+                <strong id="totalPerformanceShipments">0</strong>
+            </div>
+            <div class="stat-card success">
+                <span>People</span>
+                <strong id="totalPerformancePeople">0</strong>
+            </div>
+            <div class="stat-card info">
+                <span>Top Status</span>
+                <strong id="topPerformanceStatus">-</strong>
+            </div>
+            <div class="stat-card warning">
+                <span>Selected Period</span>
+                <strong id="selectedPerformanceDate">-</strong>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="table-header">
+                <div>
+                    <span class="section-label">Business Intelligence</span>
+                    <h2 id="performanceTitle">Separate Performance</h2>
+                </div>
+                <span id="performanceModeLabel" class="panel-count">0 shipments</span>
+            </div>
+            <div id="performanceContent" class="performance-list">
+                <p class="empty-state">No performance data found.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment History</title>
+    <link rel="stylesheet" href="frontcss.css">
+    <script src="shipment.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <div class="title-block">
+                <img src="deliveryzone.png" alt="Delivery Zone" class="brand-logo">
+                <div>
+                    <span class="eyebrow">Shipment Details</span>
+                    <h1 id="shipmentTitle">Shipment History</h1>
+                    <p id="shipmentLabel">Loading shipment activity</p>
+                </div>
+            </div>
+
+            <div class="header-actions performance-actions">
+                <a href="performance.html" class="secondary-btn nav-btn">Back to Performance</a>
+                <a href="fronthtml.html" class="secondary-btn nav-btn">Back to Tracker</a>
+            </div>
+        </header>
+
+        <section class="overview-grid performance-overview" aria-label="Shipment latest update">
+            <div class="stat-card">
+                <span>Shipment Number</span>
+                <strong id="detailOrder">-</strong>
+            </div>
+            <div class="stat-card success">
+                <span>Latest Status</span>
+                <strong id="detailStatus">-</strong>
+            </div>
+            <div class="stat-card info">
+                <span>Latest Date</span>
+                <strong id="detailDate">-</strong>
+            </div>
+            <div class="stat-card warning">
+                <span>Latest By</span>
+                <strong id="detailPerson">-</strong>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="table-header">
+                <div>
+                    <span class="section-label">Comment Timeline</span>
+                    <h2>All Updates Under This Shipment</h2>
+                </div>
+                <span id="detailModeLabel" class="panel-count">0 updates</span>
+            </div>
+            <div id="shipmentTimeline" class="timeline-list">
+                <p class="empty-state">No shipment history found.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

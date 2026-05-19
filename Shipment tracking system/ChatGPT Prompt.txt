@@ -1,0 +1,11 @@
+Generate a code where I have shipments to track now these shipments are on an excel file so basically lets say today I have a shipment that i called the person to ask for his location and the person didnt respond now i labeleld him on the excel sheet with his order number next to it the status which is no response and next to it the date that that action happen but the next day i called him again and put on the excel sheet that it was located and dispatched. you get the idea now what i want is an html css and java code that does that everyday I put in the same excel sheet but updated with the new status i want the html code to display the shipment number, the status and the date also I want when it was updated I want a search button where I can search for a shipment and find its status and i want it proffessional and nice looking. I want only me to use it so when my manager asks me for a shipment I have the updated website that has the status of said shipment now the excel sheet starts with the order number on A, on B its the status and on C its the date. Please create the sheet and make it easy to use Make the html file named fronthtml, css file frontcss. java javacss
+
+C:\Users\Customer Care\Desktop\AD Police\Shipment tracking system
+
+this is where all the fronthtml and frontcss and front java located
+
+use this file directory 
+
+
+
+Do you see the html css and java code infront of you Edit them so that when it takes the things in column A and B and C, it tkae all of it until the bottom it doesnt stop at the spaces between each input so A(Infiniti) not until A(55)
